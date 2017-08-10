@@ -166,7 +166,8 @@ class Snappic_Base {
                 $updated_options = array( 
                     'key_id' => $result['key_id'],
                     'cust_key' => $result['consumer_key'],
-                    'cust_secret'   => $result['consumer_secret']
+                    'cust_secret'   => $result['consumer_secret'],
+                    'cleanup'   => 'yes'
                 );
 
                 $this->helper->update_options( $updated_options );

@@ -70,6 +70,7 @@ class Snappic_Integration extends WC_Integration {
                 'title'         => __( 'Cleanup on Uninstall', 'snappic-for-woocommerce' ),
                 'label'         => __( 'Completely remove settings on plugin removal', 'snappic-for-woocommerce' ),
                 'type'          => 'checkbox',
+                'default'       => 'yes'
             )
 
         );
