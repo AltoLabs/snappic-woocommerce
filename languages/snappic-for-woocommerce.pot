@@ -2,10 +2,10 @@
 # This file is distributed under the GPL2 http://www.gnu.org/licenses/gpl-2.0.html.
 msgid ""
 msgstr ""
-"Project-Id-Version: Snappic Integration for WooCommerce 1.0.0-RC-1\n"
+"Project-Id-Version: Snappic for WooCommerce 1.0.0-RC-2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/snappic-for-woocommerce\n"
-"POT-Creation-Date: 2017-08-09 03:56:09+00:00\n"
+"POT-Creation-Date: 2017-08-10 15:46:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -183,32 +183,32 @@ msgstr ""
 msgid "Snappic"
 msgstr ""
 
-#: snappic-for-woocommerce.php:206
+#: snappic-for-woocommerce.php:207
 msgid ""
 "Could not find a WooCommerce Install. Snappic requires WooCommerce v%s or "
 "higher."
 msgstr ""
 
-#: snappic-for-woocommerce.php:223
+#: snappic-for-woocommerce.php:224
 msgid ""
 "For the Snappic extension to operate properly, the URL rewriting "
 "<strong>must</strong> be turned on and set to any value (other than "
 "\"Plain\") in the %sPermalinks Settings%s"
 msgstr ""
 
-#: snappic-for-woocommerce.php:231
+#: snappic-for-woocommerce.php:232
 msgid ""
 "Snappic is running in sandbox mode. Go to %sSnappic Settings%s to switch to "
 "live mode."
 msgstr ""
 
-#: snappic-for-woocommerce.php:240
+#: snappic-for-woocommerce.php:241
 msgid ""
 "Sign up for Snappic to get your tracking pixel. Go to %sSnappic%s to sign "
 "up."
 msgstr ""
 
-#: snappic-for-woocommerce.php:261
+#: snappic-for-woocommerce.php:262
 msgid "Settings"
 msgstr ""
 
