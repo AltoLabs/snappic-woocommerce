@@ -1,0 +1,229 @@
+# Copyright (C) 2017 Snappic
+# This file is distributed under the GPL2 http://www.gnu.org/licenses/gpl-2.0.html.
+msgid ""
+msgstr ""
+"Project-Id-Version: Snappic Integration for WooCommerce 1.0.0-RC-1\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/snappic-for-woocommerce\n"
+"POT-Creation-Date: 2017-08-09 03:56:09+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n1.0.0\n"
+
+#: includes/admin/views/html-snappic-welcome.php:18
+msgid "Already have an account?"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:19
+msgid "Sign in"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:34
+msgid "Looks like we have to switch your URL structure from “Plain” to “Post Name”"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:35
+msgid ""
+"THIS ALLOWS US TO SYNC UP WITH YOUR INVENTORY AND STOP SHOWING ADS FOR "
+"PRODUCTS ONCE THEY ARE OUT OF STOCK"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:36
+msgid "Change and Continue"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:37
+msgid "This won’t change how your website looks or any of your products"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:46
+msgid "Awesome! Now, pick your plan"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:47
+msgid "14-DAY TRIAL. FLEXIBLE PRICING. NO CONTRACTS"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:53
+msgid "Starter"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:54
+msgid "$99/MO"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:55
+#: includes/admin/views/html-snappic-welcome.php:78
+msgid "A 4% campaign management fee on the ad spend is applied to all plans"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:56
+msgid "Get Starter"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:61
+#: includes/admin/views/html-snappic-welcome.php:84
+msgid "Instagram Retargeting Ads"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:62
+#: includes/admin/views/html-snappic-welcome.php:85
+msgid "Facebook Retargeting Ads"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:63
+#: includes/admin/views/html-snappic-welcome.php:86
+msgid "Analytics"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:64
+#: includes/admin/views/html-snappic-welcome.php:87
+msgid "Campaign Setup"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:65
+#: includes/admin/views/html-snappic-welcome.php:88
+msgid "Campaign Optimization"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:66
+#: includes/admin/views/html-snappic-welcome.php:89
+msgid "Customer Support"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:67
+#: includes/admin/views/html-snappic-welcome.php:90
+msgid "Use Social Creative"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:68
+#: includes/admin/views/html-snappic-welcome.php:91
+msgid "Real Time Product Updates"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:76
+msgid "Growth"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:77
+msgid "$199/MO"
+msgstr ""
+
+#: includes/admin/views/html-snappic-welcome.php:79
+msgid "Get Growth"
+msgstr ""
+
+#: includes/class-snappic-admin-setup-wizard.php:73
+msgid ""
+"Snappic dynamic ads (DPA) for Catch Surf saw a 19X ROI, a 2.16% click "
+"through rate, and a 95.24% decrease in acquisition cost."
+msgstr ""
+
+#: includes/class-snappic-admin-setup-wizard.php:76
+msgid "Welcome to Snappic for WooCommerce"
+msgstr ""
+
+#: includes/class-snappic-api-controller.php:84
+msgid "Sorry, you cannot view store data."
+msgstr ""
+
+#: includes/class-snappic-api-controller.php:110
+msgid "Sorry, you cannot edit the permalinks."
+msgstr ""
+
+#: includes/class-snappic-integration.php:17
+msgid "Snappic Integration"
+msgstr ""
+
+#: includes/class-snappic-integration.php:18
+msgid "Enable integration with Snappic retargeting service"
+msgstr ""
+
+#: includes/class-snappic-integration.php:41
+msgid "Customer Key"
+msgstr ""
+
+#: includes/class-snappic-integration.php:47
+msgid "Customer Secret"
+msgstr ""
+
+#: includes/class-snappic-integration.php:53
+msgid "Facebook Pixel ID"
+msgstr ""
+
+#: includes/class-snappic-integration.php:59
+msgid "Mode"
+msgstr ""
+
+#: includes/class-snappic-integration.php:62
+msgid "Run Snappic in sandbox or in live mode"
+msgstr ""
+
+#: includes/class-snappic-integration.php:65
+msgid "Sandbox"
+msgstr ""
+
+#: includes/class-snappic-integration.php:66
+msgid "Live"
+msgstr ""
+
+#: includes/class-snappic-integration.php:70
+msgid "Cleanup on Uninstall"
+msgstr ""
+
+#: includes/class-snappic-integration.php:71
+msgid "Completely remove settings on plugin removal"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Snappic"
+msgstr ""
+
+#: snappic-for-woocommerce.php:206
+msgid ""
+"Could not find a WooCommerce Install. Snappic requires WooCommerce v%s or "
+"higher."
+msgstr ""
+
+#: snappic-for-woocommerce.php:223
+msgid ""
+"For the Snappic extension to operate properly, the URL rewriting "
+"<strong>must</strong> be turned on and set to any value (other than "
+"\"Plain\") in the %sPermalinks Settings%s"
+msgstr ""
+
+#: snappic-for-woocommerce.php:231
+msgid ""
+"Snappic is running in sandbox mode. Go to %sSnappic Settings%s to switch to "
+"live mode."
+msgstr ""
+
+#: snappic-for-woocommerce.php:240
+msgid ""
+"Sign up for Snappic to get your tracking pixel. Go to %sSnappic%s to sign "
+"up."
+msgstr ""
+
+#: snappic-for-woocommerce.php:261
+msgid "Settings"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Snappic Integration for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/snappic-for-woocommerce/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Link your WooCommerce store to Snappic"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.snappic.io"
+msgstr ""
