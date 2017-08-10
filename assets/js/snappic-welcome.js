@@ -7,7 +7,7 @@ jQuery( function ( $ ) {
 		var $slides = $(this).closest('.slides');
 		var $_this = $(this);
 
-		$_this.addClass('loading');
+		$_this.addClass('loading').prop('disabled', true);
 
 		$.ajax
 		    ({ 
@@ -18,7 +18,7 @@ jQuery( function ( $ ) {
     			},
 		        success: function(result)
 		        {
-		        	$_this.removeClass('loading');
+		        	$_this.removeClass('loading').prop('disabled', true);
 		            $slides.addClass( 'pick_plan' );
 		        }
 		    });
