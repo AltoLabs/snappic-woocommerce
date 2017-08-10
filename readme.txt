@@ -1,11 +1,13 @@
-=== Snappic Integration for WooCommerce ===
-Contributors: helgatheviking
+=== Snappic for WooCommerce ===
+Contributors: Snappic
 Tags: woocommerce, snappic, retargeting 
 Requires at least: 4.7
 Tested up to: 4.8
 Stable tag: 1.0.0-RC-1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3    
+License URI: http://www.gnu.org/licenses/gpl-3.0.html    
+WC requires at least: 3.0.0    
+WC tested up to: 3.1.1  
 
 Insert Snappic tracking pixel into relevant pages
 

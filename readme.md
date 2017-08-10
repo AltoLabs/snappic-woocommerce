@@ -1,5 +1,5 @@
 # Snappic for WooCommerce #
-**Contributors:** [helgatheviking](https://profiles.wordpress.org/helgatheviking)  
+**Contributors:** [Snappic](https://profiles.wordpress.org/Snappic)  
 **Tags:** woocommerce, snappic, retargeting   
 **Requires at least:** 4.7  
 **Tested up to:** 4.8  
