@@ -40,3 +40,6 @@ We analyze each of your visitors, the products they looked at, and learn what th
 
 ### 1.0 ###
 * First release
+
+### Terms of Service ###
+http://snappic.io/terms-of-service.html
