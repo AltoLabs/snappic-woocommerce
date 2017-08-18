@@ -1,6 +1,6 @@
 === Snappic for WooCommerce ===
 Contributors: Snappic
-Tags: woocommerce, snappic, retargeting 
+Tags: woocommerce, snappic, retargeting, facebook, Facebook Pixel, Facebook Conversion Pixel, New Facebook Pixel, Facebook retargeting, feed, Instagram, Instagram feed, Facebook ads, Instagram ads 
 Requires at least: 4.7
 Tested up to: 4.8
 Stable tag: 1.0.0-RC-2
