@@ -3,21 +3,23 @@ Contributors: Snappic
 Tags: woocommerce, snappic, retargeting 
 Requires at least: 4.7
 Tested up to: 4.8
-Stable tag: 1.0.0-RC-3
+Stable tag: 1.0.0-RC-4
 License: GPLv3    
 License URI: http://www.gnu.org/licenses/gpl-3.0.html    
 WC requires at least: 3.0.0    
 WC tested up to: 3.1.1  
 
-Instagram + Facebook retargeting ads that work!
+Easy Instagram + Facebook retargeting ads that work!
 
 == Description ==
 
-* Maximize sales. See an average of 4-7X ROI.
+* Maximize sales with customized ads for every visitor. See an average of 4-7X ROI.
 
-* Better looking ads. We let you use your Instagram images instead of regular product detail images for your retargeting ads.
+* Use your Instagram images instead of regular product detail images for better looking retargeting ads.
 
-* FOMO = More purchases. We automatically update your ads whenever your your inventory gets low. Ads will automatically start saying, “Only 5 Left!,” “Only 4 Left!!,” etc.
+* FOMO = More purchases. We automatically update your ads whenever your your inventory gets low. Ads will automatically start saying, “Only 5 Left!,” “Only 4 Left!,” etc.
+
+* Easy 1-click installation. Get your ads up and running in just minutes. Easily keep track of all the sales and revenue coming in through our easy to use dashboard. 
 
 == What People are Saying ==
 >"We’ve tried a lot of different services from much larger and more expensive companies. Snappic was cheaper, the ads look more natural, and we had over 271% more return. What more could you ask for?”
@@ -40,14 +42,12 @@ Next time they’re browsing Instagram or Facebook they’ll see an ad specifica
 
 == Installation ==
 
-1. Upload 'snappic-for-woocommerce' to the '/wp-content/plugins/' directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Add your Snappic API key to WooCommerce->Settings->Integration->Integration tab
-1. Enable shipping rate calculation in WooCommerce->Settings->Shipping->Snappic Shipping tab
+1. Go to plugins -> Add new.
+1. Search for "Snappic" 
+1. Click on "Install Now"
+1. Click on "Activate Plugin"
 
 == Frequently Asked Questions ==
-
-= How do I get Snappic API key? =
 
 
 
