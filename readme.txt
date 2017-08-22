@@ -1,6 +1,6 @@
 === Snappic for WooCommerce ===
 Contributors: Snappic
-Tags: woocommerce, snappic, retargeting 
+Tags: woocommerce, snappic, retargeting, facebook, Facebook Pixel, Facebook Conversion Pixel, New Facebook Pixel, Facebook retargeting, feed, Instagram, Instagram feed, Facebook ads, Instagram ads
 Requires at least: 4.7
 Tested up to: 4.8
 Stable tag: 1.0.0-RC-4
@@ -17,9 +17,9 @@ Easy Instagram + Facebook retargeting ads that work!
 
 * Use your Instagram images instead of regular product detail images for better looking retargeting ads.
 
-* FOMO = More purchases. We automatically update your ads whenever your your inventory gets low. Ads will automatically start saying, “Only 5 Left!,” “Only 4 Left!,” etc.
+* FOMO = More purchases. Ads will automatically start saying, “Only 5 Left!,” “Only 4 Left!,” etc. when your your inventory gets low. Create a sense of urgency to drive more sales.
 
-* Easy 1-click installation. Get your ads up and running in just minutes. Easily keep track of all the sales and revenue coming in through our easy to use dashboard. 
+* Easy 1-click installation. Get your ads up and running in just minutes. Easily keep track of all your sales and revenue through our easy to use dashboard. 
 
 == What People are Saying ==
 >"We’ve tried a lot of different services from much larger and more expensive companies. Snappic was cheaper, the ads look more natural, and we had over 271% more return. What more could you ask for?”
@@ -42,7 +42,7 @@ Next time they’re browsing Instagram or Facebook they’ll see an ad specifica
 
 == Installation ==
 
-1. Go to plugins -> Add new.
+1. Go to Plugins -> Add new.
 1. Search for "Snappic" 
 1. Click on "Install Now"
 1. Click on "Activate Plugin"
