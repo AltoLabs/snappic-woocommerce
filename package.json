@@ -1,18 +1,18 @@
 {
   "title": "Snapppic for WooCommerce",
   "name": "snappic-for-woocommerce",
-  "version": "1.0.0-RC-2",
+  "version": "1.0.2",
   "description": "Snappic Integration",
   "main": "Gruntfile.js",
   "license": "GPL-2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/helgatheviking/snappic"
+    "url": "https://github.com/altolabs/snappic-woocommerce"
   },
   "bugs": {
-    "url": "https://github.com/helgatheviking/snappic/issues"
+    "url": "https://github.com/altolabs/snappic-woocommerce/issues"
   },
-  "author": "helgatheviking",
+  "author": "altolabs",
   "devDependencies": {
     "grunt": "~1.0.1",
     "grunt-contrib-clean": "~1.1.0",

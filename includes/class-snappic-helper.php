@@ -48,12 +48,12 @@ class Snappic_Helper {
         $body = wp_remote_retrieve_body( $result );
         $data = json_decode( $body );
 
-        // If Facebook pixel is not empty string, we need to save it. 
+        // If Facebook pixel is not empty string, we need to save it.
         if( isset( $data->facebook_pixel_id ) && '' !== $data->facebook_pixel_id ) {
             // If the pixel was saved, delete the cached API call
             if( $this->save_pixel_id( $data->facebook_pixel_id ) ) {
                 wp_cache_delete( 'snappic_pixel_request', 'api_calls' );
-            }            
+            }
         }
 
 
@@ -108,7 +108,7 @@ class Snappic_Helper {
         $old_options = (array) get_option( $settings->get_option_key() );
         $new_options = apply_filters( 'woocommerce_settings_api_sanitized_fields_' . $settings->id, $options );
         $updated_options = array_merge( $old_options, $new_options );
-       
+
         return update_option( $settings->get_option_key(), $updated_options );
     }
 
@@ -221,32 +221,19 @@ class Snappic_Helper {
         $consumerKey = $settings->get_option( 'cust_key');
         $consumerSecret = $settings->get_option( 'cust_secret' );
 
-        $query_args = array( 
-            'login'   => '',
-            'pricing'   => '',
+        $query_args = array(
+            'login' => true,
             'provider'  => 'woocommerce',
-            'domain' => urlencode( $this->get_site_domain() ),
-            'access_token' => urlencode( $consumerKey.':'.$consumerSecret )
+            'domain' => urlencode($this->get_site_domain()),
+            'access_token' => urlencode($consumerKey.':'.$consumerSecret)
         );
 
         // Validate the plan is either starter or growth.
         $plan = in_array( $plan, array( 'starter', 'growth' ) ) ? $plan : '';
-        
-        if( $plan ) {
-            $query_args[ 'sra_plan' ] = $plan;
-        }
+
+        if ($plan) { $query_args['sra_plan'] = $plan; }
 
         return add_query_arg( $query_args, $this->get_snappic_admin_url() );
-    }
-
-              
-    /**
-     * Return the checkout tracker url for the Snappic API
-     *
-     * @return string
-     */
-    public function get_login_url() {
-        return add_query_arg( 'login', '', $this->get_snappic_admin_url() );
     }
 
 
