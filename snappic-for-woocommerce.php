@@ -14,8 +14,7 @@ Domain Path: /languages
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Snappic_Base {
-
-    const VERSION = '1.0.0-RC-2';
+    const VERSION = '1.0.1';
     const REQUIRED_WOO = '3.1.0';
 
     public static $_instance;
@@ -68,7 +67,7 @@ class Snappic_Base {
         add_filter( 'rest_api_init', array( $this, 'add_api_resource' ) );
 
         /*
-         * Save routine workaround 
+         * Save routine workaround
          * WooCommerce saves the integrations *after* admin_notice hook
          * So our notices are not updated until refresh
          * See: https://github.com/woocommerce/woocommerce/issues/16221
@@ -99,7 +98,7 @@ class Snappic_Base {
         }
 
         // Front End Pixel.
-        if( ! is_admin() ) {       
+        if( ! is_admin() ) {
             include_once( 'includes/class-snappic-pixel.php' );
             include_once( 'includes/class-snappic-pixel-display.php' );
         }
@@ -120,7 +119,7 @@ class Snappic_Base {
         // No versions? This is a new install :)
         if ( is_null( $settings ) && apply_filters( 'snappic_enable_setup_wizard', true ) ) {
             set_transient( '_snappic_activation_redirect', 1, 30 );
-        } 
+        }
 
         $snappic = Snappic_Base::get_instance();
         add_action( 'shutdown', array( $snappic, 'delayed_install' ) );
@@ -144,12 +143,12 @@ class Snappic_Base {
             // If the user needs to install, send them to the setup wizard
             wp_safe_redirect( admin_url( 'index.php?page=snappic-welcome' ) );
             exit;
-            
+
         }
     }
 
     /**
-     * Delay the keygen until shutdown. 
+     * Delay the keygen until shutdown.
      */
     public function delayed_install() {
 
@@ -163,7 +162,7 @@ class Snappic_Base {
 
             if( ! is_wp_error( $result ) ) {
 
-                $updated_options = array( 
+                $updated_options = array(
                     'key_id' => $result['key_id'],
                     'cust_key' => $result['consumer_key'],
                     'cust_secret'   => $result['consumer_secret'],
@@ -171,9 +170,9 @@ class Snappic_Base {
                 );
 
                 $this->helper->update_options( $updated_options );
-            } 
+            }
 
-        } 
+        }
 
     }
 
@@ -220,33 +219,33 @@ class Snappic_Base {
         $class = 'notice notice-warning';
 
         // Permalinks are disabled
-        if ( '' == get_option( 'permalink_structure' ) || ! get_option( 'permalink_structure' ) ) { 
+        if ( '' == get_option( 'permalink_structure' ) || ! get_option( 'permalink_structure' ) ) {
             $message = sprintf( __( 'For the Snappic extension to operate properly, the URL rewriting <strong>must</strong> be turned on and set to any value (other than "Plain") in the %sPermalinks Settings%s', 'snappic-for-woocommerce' ), '<a href="' . admin_url( 'options-permalink.php' ) . '">', '</a>' );
 
             printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), $message );
         }
 
         // Notice in sandbox mode
-        if( $this->helper->is_sandboxed() ) { 
+        if( $this->helper->is_sandboxed() ) {
 
             $message = sprintf( __( 'Snappic is running in sandbox mode. Go to %sSnappic Settings%s to switch to live mode.', 'snappic-for-woocommerce' ), '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=integration&section=snappic' ) . '">', '</a>' );
 
             printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), $message );
 
         // Notice if live and needs a pixel
-        } else if ( $this->helper->is_live() && $this->helper->needs_pixel() ) { 
+        } else if ( $this->helper->is_live() && $this->helper->needs_pixel() ) {
 
             $signup_url = $this->helper->get_signup_url();
 
-            $message = sprintf( __( 'Sign up for Snappic to get your tracking pixel. Go to %sSnappic%s to sign up.', 'snappic-for-woocommerce' ), 
-                '<a href="' . $signup_url . '">', 
+            $message = sprintf( __( 'Sign up for Snappic to get your tracking pixel. Go to %sSnappic%s to sign up.', 'snappic-for-woocommerce' ),
+                '<a href="' . $signup_url . '">',
                 '</a>' );
 
             printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), $message );
 
         }
 
-        
+
     }
 
     /**
@@ -302,7 +301,7 @@ class Snappic_Base {
      *
      * @param $integrations array
      * @return  array
-     */   
+     */
     public function add_integration( $integrations ) {
         $integrations[] = 'Snappic_Integration';
         return $integrations;
@@ -313,7 +312,7 @@ class Snappic_Base {
      *
      * @param $endpoints array
      * @return  array
-     */  
+     */
     public function add_api_resource( $endpoints ) {
         $controller = new Snappic_API_Controller;
         $controller->register_routes();
@@ -325,7 +324,7 @@ class Snappic_Base {
      *
      * @param $endpoints array
      * @return  array
-     */  
+     */
     public function save_workaround() {
 
         if ( ! empty( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'woocommerce-settings' ) ) {
@@ -334,14 +333,14 @@ class Snappic_Base {
             if ( 'snappic' == $current_section ) {
                 do_action( 'woocommerce_update_options_integration_snappic' );
             }
-        } 
+        }
 
     }
 
     /*-----------------------------------------------------------------------------------*/
     /*  Helpers                                                                   */
     /*-----------------------------------------------------------------------------------*/
-    
+
     /**
      * Get the plugin url.
      *
