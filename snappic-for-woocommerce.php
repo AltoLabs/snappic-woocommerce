@@ -14,7 +14,7 @@ Domain Path: /languages
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Snappic_Base {
-    const VERSION = '1.0.2';
+    const VERSION = '1.0.3';
     const REQUIRED_WOO = '3.1.0';
 
     public static $_instance;
