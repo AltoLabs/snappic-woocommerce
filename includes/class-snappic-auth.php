@@ -24,9 +24,8 @@ class Snappic_Auth extends WC_Auth {
 	 *
 	 * @return array
 	 */
-	public static function generate_keys( $app_name, $app_user_id, $scope ) {
-		$auth = new parent;
-	    return $auth->create_keys( $app_name, $app_user_id, $scope );
+	public function generate_keys( $app_name, $app_user_id, $scope ) {
+	  return $this->create_keys( $app_name, $app_user_id, $scope );
 	}
 
 	/**
@@ -42,6 +41,6 @@ class Snappic_Auth extends WC_Auth {
 		global $wpdb;
 
 		$wpdb->delete( $wpdb->prefix . 'woocommerce_api_keys', array( 'key_id' => $key_id ), array( '%d' ) );
-		
+
 	}
 }
