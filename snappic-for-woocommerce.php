@@ -5,7 +5,7 @@ Plugin URI: https://wordpress.org/plugins/snappic-for-woocommerce/
 Description: Link your WooCommerce store to Snappic
 Version: 1.0
 Author: Snappic
-Author URI: http://www.snappic.io
+Author URI: https://www.snappic.io
 License: GPL2 http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: snappic-for-woocommerce
 Domain Path: /languages

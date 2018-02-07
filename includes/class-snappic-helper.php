@@ -6,7 +6,7 @@ class Snappic_Helper {
     const TESTPIXEL = '123123123';
     const API_HOST_DEFAULT = 'https://api.snappic.io';
     const API_SANDBOX_HOST_DEFAULT = 'http://api.magento-sandbox.snappic.io';
-    const SNAPPIC_ADMIN_URL_DEFAULT = 'https://www.snappic.io';
+    const SNAPPIC_ADMIN_URL_DEFAULT = 'https://app.snappic.io';
     const OPTION = 'woocommerce_snappic_settings';
 
     public static $_instance;
