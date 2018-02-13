@@ -157,8 +157,9 @@ class Snappic_Base {
             update_option( 'woocommerce_api_enabled', 'yes' );
 
             include_once( 'includes/class-snappic-auth.php' );
-
-            $result = Snappic_Auth::generate_keys( __( 'Snappic', 'snappic-for-woocommerce' ), $this->helper->get_site_domain(), 'read' );
+            $snappicAuth = new Snappic_Auth();
+            $domain = $this->helper->get_site_domain();
+            $result = $snappicAuth->generate_keys( __( 'Snappic', 'snappic-for-woocommerce' ), $domain, 'read' );
 
             if( ! is_wp_error( $result ) ) {
 
