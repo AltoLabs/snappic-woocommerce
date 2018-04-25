@@ -283,7 +283,7 @@ class Snappic_Base {
         $locale = apply_filters( 'plugin_locale', $locale, 'snappic' );
 
         unload_textdomain( 'snappic' );
-        load_plugin_textdomain( 'snappic', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+        load_plugin_textdomain( 'snappic-for-woocommerce', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
     }
 
 
