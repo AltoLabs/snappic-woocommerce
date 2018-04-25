@@ -33,22 +33,6 @@ class Snappic_API_Controller extends WP_REST_Controller {
       'schema' => array( $this, 'get_public_item_schema' ),
     ) );
 
-    register_rest_route( $this->namespace, '/' . $this->rest_base . '/update', array(
-      array(
-        'methods'             => WP_REST_Server::EDITABLE,
-        'callback'            => array( $this, 'update_permalinks' ),
-        'permission_callback' => array( $this, 'update_permalinks_permissions_check' ),
-      )
-    ) );
-
-    register_rest_route( $this->namespace, '/' . $this->rest_base . '/signup', array(
-      array(
-        'methods'             => WP_REST_Server::EDITABLE,
-        'callback'            => array( $this, 'get_signup_link' ),
-        'permission_callback' => array( $this, 'update_permalinks_permissions_check' ),
-      )
-    ) );
-
   }
  
   /**
@@ -101,11 +85,14 @@ class Snappic_API_Controller extends WP_REST_Controller {
   /**
    * Makes sure the current user has access to WRITE the settings APIs.
    *
-   * @since  3.0.0
+   * @since  1.0.0
+   * @deprecated 1.1.0
+   * 
    * @param WP_REST_Request $request Full data about the request.
    * @return WP_Error|boolean
    */
-  public function update_permalinks_permissions_check( $request ) {
+  public function update_permalinks_permissions_check( $request ) { 
+    _deprecated_function( 'WC_Free_Gift_Coupons::update_permalinks', '1.1.0', 'Snappic_Base::update_permalinks()' );
     if ( ! wc_rest_check_manager_permissions( 'settings', 'edit' ) ) {
       return new WP_Error( 'woocommerce_rest_cannot_edit', __( 'Sorry, you cannot edit the permalinks.', 'snappic-for-woocommerce' ), array( 'status' => rest_authorization_required_code() ) );
     }
@@ -115,12 +102,16 @@ class Snappic_API_Controller extends WP_REST_Controller {
 
   /**
    * Check whether a given request has permission to read data.
+   * 
+   * @since 1.0.0 
+   * @deprecated 1.1.0 - process now occurs via AJAX callback, see Snappic_Base::update_permalinks()
    *
    * @param  WP_REST_Request $request Full details about the request.
    * @return WP_Error|boolean
    */
   public function update_permalinks( $request ) {
-    $data = array( 'status' => update_option( 'permalink_structure', "/%postname%/" ) );
+    _deprecated_function( 'WC_Free_Gift_Coupons::update_permalinks', '1.1.0', 'Snappic_Base::update_permalinks()' );
+    $data = array( 'status' => update_option( 'permalink_structure', "/%year%/%monthnum%/%postname%/" ) );
     flush_rewrite_rules();
     return rest_ensure_response( $data );
   }

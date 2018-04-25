@@ -34,6 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <h2 class="h2"><?php _e( 'Looks like we have to switch your URL structure from “Plain” to “Post Name”', 'snappic-for-woocommerce' );?></h2>
         <div class="subtitle"><?php _e( 'THIS ALLOWS US TO SYNC UP WITH YOUR INVENTORY AND STOP SHOWING ADS FOR PRODUCTS ONCE THEY ARE OUT OF STOCK', 'snappic-for-woocommerce' );?></div>
         <a href='#pick_plan' class="button-blue js-goto update-permalink" data-goto="pick_plan"><?php _e( 'Change and Continue', 'snappic-for-woocommerce' );?></a>
+        <div class="permalink_error" style="display:none;"><p><?php _e( 'Sorry, we were not able to update your permalinks at this time.', 'snappic-for-woocommerce' );?></p></div>
         <div class="note"><?php _e( 'This won’t change how your website looks or any of your products', 'snappic-for-woocommerce' );?></div>
       </div>
       <!-- end content -->

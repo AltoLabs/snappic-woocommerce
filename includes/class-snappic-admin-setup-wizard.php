@@ -47,8 +47,8 @@ class Snappic_Admin_Setup_Wizard {
 		wp_enqueue_script( 'snappic-welcome', Snappic_Base::get_instance()->plugin_url() . '/assets/js/snappic-welcome.js', array( 'jquery' ), Snappic_Base::VERSION, true );
 
 		$l10n = array( 
-			'nonce' => wp_create_nonce( 'wp_rest' ),
-			'permalink_url' => esc_url_raw( rest_url( 'wc/v1/snappic/store/update' ) ),
+			'nonce' => wp_create_nonce( 'snappic_update' ),
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			 );
 		wp_localize_script( 'snappic-welcome', 'snappic_for_woocommerce ', $l10n );
 

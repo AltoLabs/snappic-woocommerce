@@ -65,6 +65,9 @@ class Snappic_Base {
 
         // Register API endpoint
         add_filter( 'rest_api_init', array( $this, 'add_api_resource' ) );
+        
+        // Ajax callback for updating permalinks
+        add_action( 'wp_ajax_snappic_update_permalinks', array( $this, 'update_permalinks' ) );
 
         /*
          * Save routine workaround
@@ -338,6 +341,36 @@ class Snappic_Base {
 
     }
 
+
+    /**
+     * Update the Permalinks via AJAX
+     * Using an AJAX callback is preferred to using a REST route because it ensures that the functions that write the HTACCESS are available.
+     *
+     * @return string json-encoded
+     */
+    public function update_permalinks() {
+        
+        global $wp_rewrite;
+        
+        error_log(json_encode($wp_rewrite));
+        
+        $permalink_structure = "/%postname%/";
+	
+		if ( ! isset( $_POST[ 'nonce' ] ) || ! wp_verify_nonce( $_POST[ 'nonce' ], 'snappic_update' ) ) {
+			wp_die();
+		}
+ 
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die();
+		}
+        
+        $wp_rewrite->set_permalink_structure( $permalink_structure );
+        flush_rewrite_rules();
+        wp_die('1');
+        
+    }
+  
+  
     /*-----------------------------------------------------------------------------------*/
     /*  Helpers                                                                   */
     /*-----------------------------------------------------------------------------------*/

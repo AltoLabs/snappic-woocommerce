@@ -236,6 +236,9 @@ body{
   width: 20px;
   top: 4px;
 }
+.permalink_error {
+    margin-top: 2em;
+}
 .subtitle{
   text-transform: uppercase;
   color: #25c8d4;
