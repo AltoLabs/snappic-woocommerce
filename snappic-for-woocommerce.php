@@ -351,9 +351,7 @@ class Snappic_Base {
     public function update_permalinks() {
         
         global $wp_rewrite;
-        
-        error_log(json_encode($wp_rewrite));
-        
+            
         $permalink_structure = "/%postname%/";
 	
 		if ( ! isset( $_POST[ 'nonce' ] ) || ! wp_verify_nonce( $_POST[ 'nonce' ], 'snappic_update' ) ) {
