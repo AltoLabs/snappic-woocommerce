@@ -14,7 +14,7 @@ Domain Path: /languages
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Snappic_Base {
-    const VERSION = '1.0.6';
+    const VERSION = '1.0.7';
     const REQUIRED_WOO = '3.1.0';
 
     public static $_instance;
@@ -65,7 +65,7 @@ class Snappic_Base {
 
         // Register API endpoint
         add_filter( 'rest_api_init', array( $this, 'add_api_resource' ) );
-        
+
         // Ajax callback for updating permalinks
         add_action( 'wp_ajax_snappic_update_permalinks', array( $this, 'update_permalinks' ) );
 
@@ -349,26 +349,26 @@ class Snappic_Base {
      * @return string json-encoded
      */
     public function update_permalinks() {
-        
+
         global $wp_rewrite;
-            
+
         $permalink_structure = "/%postname%/";
-	
+
 		if ( ! isset( $_POST[ 'nonce' ] ) || ! wp_verify_nonce( $_POST[ 'nonce' ], 'snappic_update' ) ) {
 			wp_die();
 		}
- 
+
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die();
 		}
-        
+
         $wp_rewrite->set_permalink_structure( $permalink_structure );
         flush_rewrite_rules();
         wp_die('1');
-        
+
     }
-  
-  
+
+
     /*-----------------------------------------------------------------------------------*/
     /*  Helpers                                                                   */
     /*-----------------------------------------------------------------------------------*/
