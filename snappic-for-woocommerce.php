@@ -154,30 +154,10 @@ class Snappic_Base {
      * Delay the keygen until shutdown.
      */
     public function delayed_install() {
-
         if( ! $this->helper->get_stored_pixel_id() ) {
-
-            update_option( 'woocommerce_api_enabled', 'yes' );
-
-            include_once( 'includes/class-snappic-auth.php' );
-            $snappicAuth = new Snappic_Auth();
-            $domain = $this->helper->get_site_domain();
-            $result = $snappicAuth->generate_keys( __( 'Snappic', 'snappic-for-woocommerce' ), $domain, 'read' );
-
-            if( ! is_wp_error( $result ) ) {
-
-                $updated_options = array(
-                    'key_id' => $result['key_id'],
-                    'cust_key' => $result['consumer_key'],
-                    'cust_secret'   => $result['consumer_secret'],
-                    'cleanup'   => 'yes'
-                );
-
-                $this->helper->update_options( $updated_options );
-            }
-
+            $settings = Snappic_Integration::instance();
+            $settings->set_api_keys();
         }
-
     }
 
 
