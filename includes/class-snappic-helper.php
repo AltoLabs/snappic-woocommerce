@@ -173,7 +173,7 @@ class Snappic_Helper {
      * @return string
      */
     public function get_api_url($bypassSandbox = false) {
-        return add_query_arg('domain', $this->get_site_domain(), $this->get_api_host($bypassSandbox) . '/stores/current');
+        return add_query_arg('domain', $this->get_site_domain(), $this->get_api_host($bypassSandbox) . '/admin_frontend/stores/current');
     }
 
     /**
