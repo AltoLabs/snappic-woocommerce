@@ -2,7 +2,7 @@
 # This file is distributed under the GPL2 http://www.gnu.org/licenses/gpl-2.0.html.
 msgid ""
 msgstr ""
-"Project-Id-Version: Snappic for WooCommerce 1.0.7\n"
+"Project-Id-Version: Snappic for WooCommerce 1.1.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/snappic-for-woocommerce\n"
 "POT-Creation-Date: 2017-08-10 15:46:21+00:00\n"
