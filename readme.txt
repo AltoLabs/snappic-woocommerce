@@ -43,3 +43,12 @@ Next time they’re browsing Instagram or Facebook they’ll see an ad specifica
 1. Search for "Snappic"
 1. Click on "Install Now"
 1. Click on "Activate Plugin"
+
+== Changelog ==
+
+= 1.1 (2018-12-7) =
+* Updated to the new API url
+* Improved API key generation
+
+= 1.0 =
+* First release
