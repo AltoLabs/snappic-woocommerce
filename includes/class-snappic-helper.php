@@ -208,6 +208,10 @@ class Snappic_Helper {
      */
     public function get_signup_url($plan = '') {
         $settings = Snappic_Integration::instance();
+
+        // Check if API keys are correctly set.
+        $settings->check_api_keys();
+
         $consumerKey = $settings->get_option('cust_key');
         $consumerSecret = $settings->get_option('cust_secret');
         $query_args = array(

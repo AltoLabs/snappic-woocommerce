@@ -26,6 +26,47 @@ class Snappic_Integration extends WC_Integration {
     }
 
     /**
+     * Checks if API keys are set correctly. Otherwise regenerate new ones.
+     *
+     * @since  1.0.0
+     */
+    public function check_api_keys() {
+        if ($this->get_option('cust_key') && $this->get_option('cust_secret')) {
+            return;
+        }
+
+        $this->set_api_keys();
+    }
+
+    /**
+     * Generate API keys and stored them in our own settings.
+     *
+     * @since  1.0.0
+     */
+    public function set_api_keys() {
+        update_option( 'woocommerce_api_enabled', 'yes' );
+
+        include_once( 'class-snappic-auth.php' );
+        $snappicAuth = new Snappic_Auth();
+        $helper = Snappic_Helper::get_instance();
+        $domain = $helper->get_site_domain();
+        $result = $snappicAuth->generate_keys( __( 'Snappic', 'snappic-for-woocommerce' ), $domain, 'read' );
+
+        if( ! is_wp_error( $result ) && !empty($result['key_id']) && !empty($result['consumer_key']) && !empty($result['consumer_secret']) ) {
+
+            $updated_options = array(
+                'key_id' => $result['key_id'],
+                'cust_key' => $result['consumer_key'],
+                'cust_secret'   => $result['consumer_secret'],
+                'cleanup'   => 'yes'
+            );
+
+            $helper->update_options( $updated_options );
+            $this->init_settings();
+        }
+    }
+
+    /**
      * Initialize settings form fields.
      *
      * Add an array of fields to be displayed
