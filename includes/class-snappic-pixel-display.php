@@ -16,6 +16,7 @@ class Snappic_Pixel_Display
 
     private static $pixel_id;
     private static $pixel;
+    private static $has_notices = false;
 
     public static function init() {
 
@@ -30,6 +31,7 @@ class Snappic_Pixel_Display
             add_action( 'wp_head', array( __CLASS__, 'inject_base_pixel' ) );
             add_action( 'woocommerce_after_single_product', array( __CLASS__, 'inject_view_content_event' ) );
             add_action( 'woocommerce_add_to_cart', array( __CLASS__, 'inject_add_to_cart_event' ), 40 );
+            add_action( 'woocommerce_after_cart', array( __CLASS__, 'inject_add_to_cart_redirect_event' ) );
             add_action( 'woocommerce_thankyou', array( __CLASS__, 'inject_purchase_event' ) );     
             add_action( 'wc_ajax_inject_add_to_cart_event', array( __CLASS__, 'inject_ajax_add_to_cart_event' ) );
 
@@ -45,6 +47,8 @@ class Snappic_Pixel_Display
   */
   public static function inject_base_pixel() {
     echo self::$pixel->pixel_base_code();
+
+    self::$has_notices = wc_get_notices();
   }
 
 
@@ -106,6 +110,17 @@ class Snappic_Pixel_Display
         'value' => WC()->cart->cart_contents_total, // $cart->total isn't calculated by WC until cart/checkout
         'currency' => get_woocommerce_currency()
       ));
+  }
+
+  /**
+  * Triggers AddToCart for cart page after  redirect
+  */
+  public static function inject_add_to_cart_redirect_event() {
+    $redirect_checked = get_option( 'woocommerce_cart_redirect_after_add', 'no' );
+
+    if ( $redirect_checked == 'yes' && self::$has_notices ) {
+       self::inject_add_to_cart_event();
+    }
   }
 
 
