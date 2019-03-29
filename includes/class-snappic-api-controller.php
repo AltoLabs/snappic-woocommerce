@@ -92,7 +92,7 @@ class Snappic_API_Controller extends WP_REST_Controller {
    * @return WP_Error|boolean
    */
   public function update_permalinks_permissions_check( $request ) { 
-    _deprecated_function( 'WC_Free_Gift_Coupons::update_permalinks', '1.1.0', 'Snappic_Base::update_permalinks()' );
+    wc_deprecated_function( 'Snappic_API_Controller::update_permalinks_permissions_check', '1.1.0', 'Snappic_Base::update_permalinks()' );
     if ( ! wc_rest_check_manager_permissions( 'settings', 'edit' ) ) {
       return new WP_Error( 'woocommerce_rest_cannot_edit', __( 'Sorry, you cannot edit the permalinks.', 'snappic-for-woocommerce' ), array( 'status' => rest_authorization_required_code() ) );
     }
@@ -110,7 +110,7 @@ class Snappic_API_Controller extends WP_REST_Controller {
    * @return WP_Error|boolean
    */
   public function update_permalinks( $request ) {
-    _deprecated_function( 'WC_Free_Gift_Coupons::update_permalinks', '1.1.0', 'Snappic_Base::update_permalinks()' );
+    wc_deprecated_function( 'Snappic_API_Controller::update_permalinks', '1.1.0', 'Snappic_Base::update_permalinks()' );
     $data = array( 'status' => update_option( 'permalink_structure', "/%year%/%monthnum%/%postname%/" ) );
     flush_rewrite_rules();
     return rest_ensure_response( $data );
