@@ -33,6 +33,26 @@ class Snappic_API_Controller extends WP_REST_Controller {
       'schema' => array( $this, 'get_public_item_schema' ),
     ) );
 
+    register_rest_route( $this->namespace, '/' . $this->rest_base . '/get_setting', array(
+      array(
+        'methods'             => WP_REST_Server::READABLE,
+        'callback'            => array( $this, 'get_setting' ),
+        'permission_callback' => array( $this, 'get_items_permissions_check' ),
+        'args'                => $this->get_collection_params(),
+      ),
+      'schema' => array( $this, 'get_public_item_schema' ),
+    ) );
+
+    register_rest_route( $this->namespace, '/' . $this->rest_base . '/set_setting', array(
+      array(
+        'methods'             => WP_REST_Server::READABLE,
+        'callback'            => array( $this, 'set_setting' ),
+        'permission_callback' => array( $this, 'get_items_permissions_check' ),
+        'args'                => $this->get_collection_params(),
+      ),
+      'schema' => array( $this, 'get_public_item_schema' ),
+    ) );
+
   }
  
   /**
@@ -55,6 +75,18 @@ class Snappic_API_Controller extends WP_REST_Controller {
         );
  
     return rest_ensure_response( $data );
+  }
+
+  public function get_setting( $request ) {
+    return rest_ensure_response(
+      array($request['param'] => Snappic_Integration::instance()->get_option($request['param']))
+    );
+  }
+
+  public function set_setting( $request ) {
+    Snappic_Helper::get_instance()->update_options(array($request['param'] => $request['value']));
+
+    return rest_ensure_response( array('success' => true) );
   }
 
   /**

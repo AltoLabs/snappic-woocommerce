@@ -17,6 +17,10 @@ class Snappic_Pixel {
   * Returns FB pixel code
   */
   public function pixel_base_code() {
+    if (Snappic_Integration::instance()->get_option('skip_pixel')) {
+      return;
+    }
+
     $params = self::add_version_info();
 
     return sprintf("
@@ -29,7 +33,7 @@ n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 %s
-fbq('track', 'PageView', %s);
+fbq('trackSingle', '%s', 'PageView', %s);
 
 <!-- Support AJAX add to cart -->
 if(typeof jQuery != 'undefined') {
@@ -54,6 +58,7 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"
 <!-- Snappic Integration end -->
       ",
       $this->pixel_init_code(),
+      $this->pixel_id,
       json_encode($params, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT),
       esc_js($this->pixel_id));
   }
@@ -62,7 +67,11 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"
   * Preferred method to inject events in a page, normally you should use this
   * instead of Snappic_Pixel::build_event()
   */
-  public function inject_event($event_name, $params, $method='track') {
+  public function inject_event($event_name, $params, $method='trackSingle') {
+    if (Snappic_Integration::instance()->get_option('skip_pixel')) {
+      return;
+    }
+
     $code = self::build_event($event_name, $params, $method);
     wc_enqueue_js($code);
   }
@@ -71,12 +80,17 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"
   * You probably should use Snappic_Pixel::inject_event() but
   * this method is available if you need to modify the JS code somehow
   */
-  public static function build_event($event_name, $params, $method='track') {
+  public static function build_event($event_name, $params, $method='trackSingle') {
+    if (Snappic_Integration::instance()->get_option('skip_pixel')) {
+      return;
+    }
+
     $params = self::add_version_info($params);
     return sprintf(
       "// WooCommerce Snappic Integration Event Tracking\n".
-      "fbq('%s', '%s', %s);",
+      "fbq('%s', '%s', '%s', %s);",
       $method,
+      Snappic_Integration::instance()->get_option('pixel_id'),
       $event_name,
       json_encode($params, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT));
   }
