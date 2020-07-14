@@ -128,7 +128,7 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"
       'agent' => $agent_string);
 
     return sprintf(
-      "fbq('init', '%s', %s, %s);\n",
+      "fbq('dataProcessingOptions', ['LDU'], 0, 0);\nfbq('init', '%s', %s, %s);\n",
       esc_js($this->pixel_id),
       json_encode($this->user_info, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT),
       json_encode($params, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT));
