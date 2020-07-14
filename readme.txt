@@ -4,7 +4,7 @@ Contributors: Snappic
 Tags: woocommerce, snappic, retargeting, facebook, Facebook Pixel, Facebook Conversion Pixel, New Facebook Pixel, Facebook retargeting, feed, Instagram, Instagram feed, Facebook ads, Instagram ads
 Requires at least: 4.7
 Tested up to: 5.0
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 3.0.0
@@ -45,6 +45,10 @@ Next time they’re browsing Instagram or Facebook they’ll see an ad specifica
 1. Click on "Activate Plugin"
 
 == Changelog ==
+
+= 1.3 (2020-7-14) =
+
+* Apply Limited Data Use feature (https://developers.facebook.com/docs/marketing-apis/data-processing-options)
 
 = 1.2 (2020-3-31) =
 

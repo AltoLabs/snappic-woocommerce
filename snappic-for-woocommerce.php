@@ -3,7 +3,7 @@
 Plugin Name: Snappic Integration for WooCommerce
 Plugin URI: https://wordpress.org/plugins/snappic-for-woocommerce/
 Description: Link your WooCommerce store to Snappic
-Version: 1.2.0
+Version: 1.3.0
 Author: Snappic
 Author URI: https://www.snappic.io
 License: GPL2 http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ Domain Path: /languages
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Snappic_Base {
-    const VERSION = '1.2.0';
+    const VERSION = '1.3.0';
     const REQUIRED_WOO = '3.1.0';
 
     public static $_instance;
