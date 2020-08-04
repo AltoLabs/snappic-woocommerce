@@ -46,6 +46,10 @@ Next time they’re browsing Instagram or Facebook they’ll see an ad specifica
 
 == Changelog ==
 
+= 1.3.1 (2020-8-4) =
+
+* Disable Limited Data Use feature by default and make it optional
+
 = 1.3 (2020-7-14) =
 
 * Apply Limited Data Use feature (https://developers.facebook.com/docs/marketing-apis/data-processing-options)

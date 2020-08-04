@@ -127,8 +127,13 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"
     $params = array(
       'agent' => $agent_string);
 
+    $ldu_code = "fbq('dataProcessingOptions', ['LDU'], 0, 0);\n";
+    $init_code = "fbq('init', '%s', %s, %s);\n";
+
+    $code = Snappic_Integration::instance()->get_option('ldu_enabled') ? $ldu_code . $init_code : $init_code;
+
     return sprintf(
-      "fbq('dataProcessingOptions', ['LDU'], 0, 0);\nfbq('init', '%s', %s, %s);\n",
+      $code,
       esc_js($this->pixel_id),
       json_encode($this->user_info, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT),
       json_encode($params, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT));
