@@ -29,5 +29,5 @@ cp -R * /tmp/snappic-woocommerce-svn/trunk
 
 cd /tmp/snappic-woocommerce-svn
 echo "Commiting changes to SVN repo..."
-svn ci --username snappic
 svn cp trunk tags/$VERSION
+svn ci --username snappic
